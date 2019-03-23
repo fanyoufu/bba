@@ -1,0 +1,130 @@
+.c-list {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: @c-bgc-mod1;
+  .c-list-title {
+    color: @c-body-title;
+    font-size: @fs-h2;
+    border-bottom: 1px solid @c-body-title;
+    padding: 0 0 0.8rem;
+    margin-bottom: 0.5rem;
+    a {
+      color: @c-body-title;
+    }
+  }
+  .c-item-title {
+    font-size: @fs-h3;
+  }
+  .c-list-item {
+    margin: 0.5rem 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .c-item-content {
+    line-height: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .c-item-meta {
+    padding-right: 1rem;
+    text-align: right;
+    font-size: @fs-low1;
+    margin: 0;
+  }
+}
+
+.c-list-inline {
+  display: block;
+  .c-list-item {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+}
+
+.c-list-inline-4 {
+  display: block;
+  .c-img-area {
+    padding: 0.5rem;
+  }
+  .item-img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+  }
+  .c-list-item {
+    box-sizing: border-box;
+    display: inline-block;
+    padding-right: 1rem;
+    width: 25%;
+  }
+}
+.c-list-with-img {
+  .c-list-item {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    margin-top: 0.5rem;
+    &:last-child {
+      margin-bottom: 0px;
+      border-bottom: none;
+    }
+    &:hover .item-img {
+      transform: scale(1.03);
+    }
+  }
+  .item-img {
+    transition: transform 0.5s;
+  }
+  .c-img-area {
+    float: left;
+    margin: 0.8rem 1.5rem 0.5rem 0;
+    overflow: hidden;
+  }
+  .c-item-content {
+    margin-top: 0.8rem;
+  }
+  .c-item-meta {
+    position: absolute;
+    bottom: 1rem;
+    right: 0;
+  }
+}
+.c-list-rank {
+  counter-reset: section;
+  .c-item-title:before {
+    counter-increment: section; /* 增加计数器值 */
+    content: counter(section); /* 显示计数器 */
+  }
+}
+.c-list-simple {
+  .c-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .item-meta {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .c-img-area {
+    display: none;
+  }
+  .c-list-with-img .c-item-meta {
+    position: initial;
+    text-align: right;
+  }
+
+  .c-list-inline-4 {
+    .c-list-item {
+      display: block;
+      padding-right: 1rem;
+      width: 100%;
+    }
+  }
+}

@@ -1,11 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">主页</router-link> |
-      <router-link :to="{name:'courselist'}">课程</router-link>
-      <router-link to="/about">关于</router-link>
-    </div>
-    <router-view/>
+    <header id="nav" class="c-header mb1">
+      <nav class="c-container-inner">
+        <router-link class="link current" to="/">主页</router-link> |
+        <router-link class="link" :to="{ name: 'courselist' }"
+          >课程</router-link
+        >
+        <router-link class="link" to="/about">关于</router-link>
+      </nav>
+    </header>
+    <router-view />
+
+    <footer class="c-footer">
+      © 2005-2019 Mozilla 及各贡献者 内容可按这些许可协议使用。
+    </footer>
   </div>
 </template>
 
@@ -14,14 +22,10 @@
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 #nav {
-  padding: 30px;
   a {
-    font-weight: bold;
-    color: #2c3e50;
     &.router-link-exact-active {
       color: #42b983;
     }
